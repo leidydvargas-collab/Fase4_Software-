@@ -24,4 +24,3 @@ Las clases y funciones no se mezclan en un archivo gigante. Las entidades se ubi
 | utilidades.py | Validación y archivo log | No repetir reglas de formato y conversión |
 | app.py | 21 operaciones | Hacer reproducible la demostración del anexo |
 | pruebas.py |15 pruebas unitarias | Comprobar resultados sin revisión manual constante |
-| README.md | Describe el proyecto y su ejecución. 
