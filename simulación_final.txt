@@ -1,0 +1,93 @@
+======================================================================
+SOFTWARE FJ - FASE 4 | SIMULACIÓN DE EXCEPCIONES Y POO
+======================================================================
+
+[01] Registrar cliente correcto
+  OK: Cliente 100001 – Ana Muñoz (ana@ejemplo.com)
+  Continuidad: la aplicación sigue funcionando.
+
+[02] Rechazar correo inválido
+  ERROR CONTROLADO: DatosInvalidos: Correo: formato incorrecto.
+  Continuidad: la aplicación sigue funcionando.
+
+[03] Registrar segundo cliente
+  OK: Cliente 100003 – Carlos Ruiz (carlos@ejemplo.com)
+  Continuidad: la aplicación sigue funcionando.
+
+[04] Rechazar identificación duplicada
+  ERROR CONTROLADO: RegistroDuplicado: Ya existe un cliente 100001.
+  Continuidad: la aplicación sigue funcionando.
+
+[05] Crear servicio de sala
+  OK: Sala SALA-01 – Sala de estudio, aforo=6, $/h=40000
+  Continuidad: la aplicación sigue funcionando.
+
+[06] Crear alquiler de equipos
+  OK: Equipo EQU-01 – Proyector, existencias=3, $/h=15000
+  Continuidad: la aplicación sigue funcionando.
+
+[07] Crear asesoría especializada
+  OK: Asesoría ASE-01 – Asesoría Python, especialidad=Programación, $/h=85000
+  Continuidad: la aplicación sigue funcionando.
+
+[08] Rechazar tarifa negativa
+  ERROR CONTROLADO: DatosInvalidos: Tarifa por hora: debe ser mayor que cero.
+  Continuidad: la aplicación sigue funcionando.
+
+[09] Crear reserva de sala válida
+  OK: Reserva R-01: cliente=100001, servicio=SALA-01, 2030-05-15 09:00, 2 h, estado=PENDIENTE, costo=sin calcular
+  Continuidad: la aplicación sigue funcionando.
+
+[10] Confirmar reserva R-01
+  OK: Reserva R-01: cliente=100001, servicio=SALA-01, 2030-05-15 09:00, 2 h, estado=CONFIRMADA, costo=sin calcular
+  Continuidad: la aplicación sigue funcionando.
+
+[11] Procesar con 10% descuento y 19% impuesto
+  OK: 85680.00
+  Continuidad: la aplicación sigue funcionando.
+
+[12] Rechazar solapamiento de la sala
+  ERROR CONTROLADO: ServicioNoDisponible: Sin disponibilidad para el horario y unidades solicitados.
+  Continuidad: la aplicación sigue funcionando.
+
+[13] Rechazar alquiler superior a existencias
+  ERROR CONTROLADO: DatosInvalidos: Unidades: inventario máximo de 3.
+  Continuidad: la aplicación sigue funcionando.
+
+[14] Crear alquiler de 2 equipos
+  OK: Reserva R-04: cliente=100003, servicio=EQU-01, 2030-05-15 09:00, 2 h, estado=PENDIENTE, costo=sin calcular
+  Continuidad: la aplicación sigue funcionando.
+
+[15] Rechazar exceso concurrente de equipos
+  ERROR CONTROLADO: ServicioNoDisponible: Sin disponibilidad para el horario y unidades solicitados.
+  Continuidad: la aplicación sigue funcionando.
+
+[16] Cancelar alquiler R-04
+  OK: Reserva R-04: cliente=100003, servicio=EQU-01, 2030-05-15 09:00, 2 h, estado=CANCELADA, costo=sin calcular
+  Continuidad: la aplicación sigue funcionando.
+
+[17] Rechazar procesar una reserva cancelada
+  ERROR CONTROLADO: OperacionNoPermitida: Solo se puede procesar una reserva CONFIRMADA.
+  Continuidad: la aplicación sigue funcionando.
+
+[18] Rechazar fecha mal escrita (excepción encadenada)
+  ERROR CONTROLADO: DatosInvalidos: Inicio: formato requerido AAAA-MM-DD HH:MM.
+  Continuidad: la aplicación sigue funcionando.
+
+[19] Crear asesoría válida
+  OK: Reserva R-07: cliente=100001, servicio=ASE-01, 2030-05-15 14:00, 1.5 h, estado=PENDIENTE, costo=sin calcular
+  Continuidad: la aplicación sigue funcionando.
+
+[20] Confirmar asesoría R-07
+  OK: Reserva R-07: cliente=100001, servicio=ASE-01, 2030-05-15 14:00, 1.5 h, estado=CONFIRMADA, costo=sin calcular
+  Continuidad: la aplicación sigue funcionando.
+
+[21] Procesar asesoría sin impuesto ni descuento
+  OK: 127500.00
+  Continuidad: la aplicación sigue funcionando.
+
+======================================================================
+RESUMEN: 21 operaciones, 13 exitosas y 8 errores controlados.
+GESTOR: 2 clientes; 3 servicios; 3 reservas
+LOG: /mnt/data/software_fj_fase4/proyecto_software_fj/logs/software_fj.log
+RESULTADO: el programa alcanzó el final sin interrumpirse.
